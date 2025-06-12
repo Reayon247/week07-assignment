@@ -20,3 +20,31 @@ app.get("/", (req, res) => {
 });
 
 //TODO I want to READ the data from the game tracker Database
+
+app.get("/gametracker", async (req, res) => {
+  try {
+    const data = await db.query("SELECT * FROM gametracker");
+    res.json(data.rows);
+  } catch (error) {
+    console.log("Error, check DB string and password");
+    res.status(500).json({ success: false });
+  }
+});
+
+//TODO I want to Create new data for my game tracker
+
+app.post("/addgame", (req, res) => {
+  const { game_name, started, finished, ongoing, rating, thumbnail, hours } =
+    req.body;
+
+  try {
+    const insert = db.query(
+      `INSERT INTO gametracker (game_name, started, finished, ongoing, rating, thumbnail, hours) VALUES ($1,$2,$3,$4,$5,$6,$7)`,
+      [game_name, started, finished, ongoing, rating, thumbnail, hours]
+    );
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.log("Error, info failed to send to the database");
+    res.status(500).json({ success: false });
+  }
+});
