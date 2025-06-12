@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router";
 import Home from "./Pages/Home";
 import GameTracker from "./Pages/GameTracker";
 import NotFound from "./Pages/NotFound";
+import Header from "./Components/Header";
 
 export default function App() {
   return (
