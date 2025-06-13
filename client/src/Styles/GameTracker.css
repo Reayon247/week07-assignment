@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100dvw;
+}
+
+.trackertitle {
+  margin: 0;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-bottom: 2px solid #00f1f1;
+  margin-bottom: 10px;
+}
+.tablecon {
+  overflow: auto;
+  width: 90dvw;
+}
+
+@media (min-width: 850px) {
+  .tablecon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}

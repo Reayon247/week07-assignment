@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ongoinggames {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.img {
+  padding-top: 20px;
+  border-top: 2px solid #00f1f1;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.hours {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.date {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.gamename {
+  margin-top: 7px;
+  margin-bottom: 0;
+  max-width: 200px;
+  text-align: center;
+}
+.highlight {
+  color: #00f1f1;
+  text-decoration: underline;
+  font-weight: bold;
+}

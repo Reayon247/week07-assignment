@@ -4,27 +4,31 @@ export default function Table(props) {
   const games = props.gameData;
   return (
     <>
-      <table>
+      <table className="table">
         <thead>
-          <tr>
-            <th>Game Names</th>
-            <th>Date Started</th>
-            <th>Date Finished</th>
-            <th>Ongoing</th>
-            <th>Game Rating</th>
-            <th>Hours Played</th>
+          <tr className="tablerow">
+            <th className="tableheader">Game Names</th>
+            <th className="tableheader">Date Started</th>
+            <th className="tableheader">Date Finished</th>
+            <th className="tableheader">Ongoing</th>
+            <th className="tableheader">Game Rating</th>
+            <th className="tableheader">Hours Played</th>
           </tr>
         </thead>
         <tbody>
           {games.map((game) => {
             return (
-              <tr key={game.id}>
-                <td>{game.game_name}</td>
-                <td>{game.started}</td>
-                <td>{game.finished ? game.finished : "N/A"}</td>
-                <td>{game.ongoing ? "✅" : "❌"}</td>
-                <td>{game.rating}</td>
-                <td>{game.hours ? game.hours : "Unknown"}</td>
+              <tr className="tablerow" key={game.id}>
+                <td className="namecell">{game.game_name}</td>
+                <td className="datestartcell">{game.started}</td>
+                <td className="dateendcell">
+                  {game.finished ? game.finished : "N/A"}
+                </td>
+                <td className="ongoingcell">{game.ongoing ? "✅" : "❌"}</td>
+                <td className="ratingcell">{game.rating}</td>
+                <td className="hourscell">
+                  {game.hours ? game.hours : "Unknown"}
+                </td>
               </tr>
             );
           })}
