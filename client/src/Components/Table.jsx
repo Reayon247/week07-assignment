@@ -21,10 +21,10 @@ export default function Table(props) {
               <tr key={game.id}>
                 <td>{game.game_name}</td>
                 <td>{game.started}</td>
-                <td>{game.finished}</td>
-                <td>{game.ongoing}</td>
+                <td>{game.finished ? game.finished : "N/A"}</td>
+                <td>{game.ongoing ? "✅" : "❌"}</td>
                 <td>{game.rating}</td>
-                <td>{game.hours}</td>
+                <td>{game.hours ? game.hours : "Unknown"}</td>
               </tr>
             );
           })}

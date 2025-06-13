@@ -13,7 +13,7 @@ export default function GameTracker(props) {
     <>
       <h2>Game Tracker</h2>
       <Table gameData={props.gameData} />
-      <button onClick={() => toggleForm}>Add Game</button>
+      <button onClick={() => toggleForm()}>Add Game</button>
       {showForm ? (
         <>
           <AddGameForm />
