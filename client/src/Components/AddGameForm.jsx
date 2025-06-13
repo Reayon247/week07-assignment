@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../Styles/Form.css";
 
 export default function AddGameForm() {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ export default function AddGameForm() {
 
   return (
     <form className="addNewGameForm" onSubmit={handleSubmit}>
-      <fieldset>
+      <fieldset className="form">
         <label htmlFor="game_name">Game Name</label>
         <input
           type="text"
@@ -58,70 +59,86 @@ export default function AddGameForm() {
           onChange={handleFormData}
         />
         <p>Are you still playing it?</p>
-        <label htmlFor="ongoing">True</label>
-        <input
-          type="radio"
-          name="ongoing"
-          required
-          value="TRUE"
-          checked={formData.ongoing === "TRUE"}
-          onChange={handleFormData}
-        />
-        <label htmlFor="ongoing">False</label>
-        <input
-          type="radio"
-          name="ongoing"
-          required
-          value="FALSE"
-          checked={formData.ongoing === "FALSE"}
-          onChange={handleFormData}
-        />
-        <p>Rating between 1-5</p>
-        <label htmlFor="rating">1</label>
-        <input
-          type="radio"
-          name="rating"
-          required
-          value="1"
-          checked={formData.rating === "1"}
-          onChange={handleFormData}
-        />
-        <label htmlFor="rating">2</label>
-        <input
-          type="radio"
-          name="rating"
-          required
-          value="2"
-          checked={formData.rating === "2"}
-          onChange={handleFormData}
-        />
-        <label htmlFor="rating">3</label>
-        <input
-          type="radio"
-          name="rating"
-          required
-          value="3"
-          checked={formData.rating === "3"}
-          onChange={handleFormData}
-        />
-        <label htmlFor="rating">4</label>
-        <input
-          type="radio"
-          name="rating"
-          required
-          value="4"
-          checked={formData.rating === "4"}
-          onChange={handleFormData}
-        />
-        <label htmlFor="rating">5</label>
-        <input
-          type="radio"
-          name="rating"
-          required
-          value="5"
-          checked={formData.rating === "5"}
-          onChange={handleFormData}
-        />
+        <label htmlFor="ongoing">
+          <input
+            type="radio"
+            name="ongoing"
+            required
+            value="TRUE"
+            checked={formData.ongoing === "TRUE"}
+            onChange={handleFormData}
+          />
+          True
+        </label>
+        <label htmlFor="ongoing">
+          <input
+            type="radio"
+            name="ongoing"
+            required
+            value="FALSE"
+            checked={formData.ongoing === "FALSE"}
+            onChange={handleFormData}
+          />
+          False
+        </label>
+        <div>
+          <p>Rating between 1-5</p>
+          <label className="rating" htmlFor="rating">
+            <input
+              type="radio"
+              name="rating"
+              required
+              value="1"
+              checked={formData.rating === "1"}
+              onChange={handleFormData}
+            />
+            1
+          </label>
+          <label className="rating" htmlFor="rating">
+            <input
+              type="radio"
+              name="rating"
+              required
+              value="2"
+              checked={formData.rating === "2"}
+              onChange={handleFormData}
+            />
+            2
+          </label>
+          <label className="rating" htmlFor="rating">
+            <input
+              type="radio"
+              name="rating"
+              required
+              value="3"
+              checked={formData.rating === "3"}
+              onChange={handleFormData}
+            />
+            3
+          </label>
+          <label className="rating" htmlFor="rating">
+            <input
+              type="radio"
+              name="rating"
+              required
+              value="4"
+              checked={formData.rating === "4"}
+              onChange={handleFormData}
+            />
+            4
+          </label>
+          <label className="rating" htmlFor="rating">
+            <input
+              type="radio"
+              name="rating"
+              required
+              value="5"
+              checked={formData.rating === "5"}
+              onChange={handleFormData}
+            />
+            5
+          </label>
+        </div>
         <label htmlFor="thumbnail">Add game thumbnail URL</label>
         <input
           type="url"

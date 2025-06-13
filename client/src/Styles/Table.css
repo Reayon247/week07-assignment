@@ -3,5 +3,32 @@ th,
 td {
   border: 1px solid black;
   border-collapse: collapse;
-  background-color: white;
+  background-color: rgb(128, 128, 128, 0.4);
+  color: white;
+}
+
+.namecell {
+  font-weight: bold;
+  color: #00f1f1;
+  padding: 10px;
+}
+.tableheader {
+  color: #00f1f1;
+  padding: 20px;
+}
+
+.ongoingcell,
+.ratingcell {
+  text-align: center;
+}
+
+.datestartcell,
+.dateendcell,
+.hourscell {
+  text-align: right;
+  padding: 5px;
+}
+
+.tablerow {
+  height: 75px;
 }

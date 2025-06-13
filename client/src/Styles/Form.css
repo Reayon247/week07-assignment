@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid #00f1f1;
+  width: 80dvw;
+}
+.rating {
+  padding-right: 20px;
+}
+
+@media (min-width: 850px) {
+  .form {
+    width: fit-content;
+  }
+}

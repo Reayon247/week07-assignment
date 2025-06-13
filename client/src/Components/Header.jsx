@@ -1,14 +1,20 @@
+import "../Styles/Header.css";
+
 export default function Header() {
   return (
-    <header>
-      <h1>Ryans Epic Gamer Tracker</h1>
-      <nav>
-        <ul>
+    <header className="header">
+      <h1 className="title">Ryan's Epic Gamer Tracker</h1>
+      <nav className="nav">
+        <ul className="linklist">
           <li>
-            <a href="/">Home</a>
+            <a href="/" className="links">
+              Home
+            </a>
           </li>
           <li>
-            <a href="/gametracker">Game Tracker</a>
+            <a href="/gametracker" className="links">
+              Game Tracker
+            </a>
           </li>
         </ul>
       </nav>

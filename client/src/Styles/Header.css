@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100dvw;
+}
+
+.title {
+  color: #00f1f1;
+  text-align: center;
+}
+
+.linklist {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  padding: 0;
+  border-bottom: 2px solid #00f1f1;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+}
+
+.links {
+  all: unset;
+  border-radius: 5px;
+  border-top: 2px solid #00f1f1;
+  border-bottom: 2px solid #00f1f1;
+  padding: 4px;
+}
+
+.links:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
