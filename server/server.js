@@ -48,3 +48,19 @@ app.post("/addgame", (req, res) => {
     res.status(500).json({ success: false });
   }
 });
+
+//TODO I want to delete games from my table
+
+app.delete("/deleteGame/:id", (req, res) => {
+  const gameId = req.params.id;
+
+  try {
+    const deleteGame = db.query(`DELETE FROM gametracker WHERE id = $1`, [
+      gameId,
+    ]);
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.log("Error, failed to delete data");
+    res.status(500).json({ success: false });
+  }
+});

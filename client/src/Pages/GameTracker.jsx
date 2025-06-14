@@ -14,9 +14,15 @@ export default function GameTracker(props) {
     <main className="main">
       <h2 className="trackertitle">Game Tracker</h2>
       <div className="tablecon">
-        <Table gameData={props.gameData} className="table" />
+        <Table
+          gameData={props.gameData}
+          className="table"
+          getGames={props.getGames}
+        />
       </div>
-      <button onClick={() => toggleForm()}>Add Game</button>
+      <button className="addgamebutton" onClick={() => toggleForm()}>
+        Add Game
+      </button>
       {showForm ? (
         <>
           <AddGameForm getGames={props.getGames} />

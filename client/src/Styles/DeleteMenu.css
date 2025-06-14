@@ -1,0 +1,45 @@
+.deletemenu {
+  position: fixed;
+  z-index: 1;
+  border: 2px solid #00f1f1;
+  background-color: #121212;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+  align-self: center;
+  left: 16%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 20px;
+}
+
+.yesbutton,
+.nobutton {
+  all: unset;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.yesbutton:hover,
+.nobutton:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+
+.yesbutton {
+  border-top: 2px solid #dd0e20;
+  border-bottom: 2px solid #dd0e20;
+}
+.nobutton {
+  border-top: 2px solid #00f1f1;
+  border-bottom: 2px solid #00f1f1;
+}

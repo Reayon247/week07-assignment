@@ -1,7 +1,37 @@
+import { useState } from "react";
 import "../Styles/Table.css";
+import DeleteMenu from "./DeleteMenu";
 
 export default function Table(props) {
   const games = props.gameData;
+
+  //Handle the delete
+
+  async function handleDelete(gameId) {
+    await fetch(`${import.meta.env.VITE_DELETE_URL}/${gameId}`, {
+      method: "DELETE",
+    });
+    closeMenu();
+    props.getGames();
+  }
+
+  //Pop up menu - delete confirmation
+
+  let [showMenu, setShowMenu] = useState(false);
+  const [selectedGameId, setSelectedGameId] = useState(null);
+  const [selectedGameName, setSelectedGameName] = useState(null);
+
+  function openMenu(gameId, gameName) {
+    setShowMenu(true);
+    setSelectedGameId(gameId);
+    setSelectedGameName(gameName);
+  }
+
+  function closeMenu() {
+    setShowMenu(false);
+    setSelectedGameId(null);
+    setSelectedGameName(null);
+  }
   return (
     <>
       <table className="table">
@@ -29,11 +59,27 @@ export default function Table(props) {
                 <td className="hourscell">
                   {game.hours ? game.hours : "Unknown"}
                 </td>
+                <td className="deletecell">
+                  <button
+                    className="deletebutton"
+                    onClick={() => openMenu(game.id, game.game_name)}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      {showMenu ? (
+        <DeleteMenu
+          gameId={selectedGameId}
+          gameName={selectedGameName}
+          onConfirmDelete={() => handleDelete(selectedGameId)}
+          onCancel={closeMenu}
+        />
+      ) : null}
     </>
   );
 }
