@@ -32,3 +32,21 @@ td {
 .tablerow {
   height: 75px;
 }
+
+.deletebutton {
+  all: unset;
+  border-radius: 5px;
+  border-top: 2px solid #dd0e20;
+  border-bottom: 2px solid #dd0e20;
+  padding: 4px;
+}
+
+.deletebutton:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+
+.deletecell {
+  padding: 10px;
+}
