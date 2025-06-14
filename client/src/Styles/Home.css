@@ -34,3 +34,19 @@
   text-decoration: underline;
   font-weight: bold;
 }
+
+.ongoinggames-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 850px) {
+  .ongoinggames-container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60dvw;
+  }
+}
