@@ -8,14 +8,15 @@ import { useEffect, useState } from "react";
 
 export default function App() {
   const [games, setGames] = useState([]);
-  useEffect(() => {
-    async function getGames() {
-      const response = await fetch(`${import.meta.env.VITE_READ_URL}`);
-      const data = await response.json();
-      setGames(data);
-      console.log(data);
-    }
 
+  const getGames = async () => {
+    const response = await fetch(`${import.meta.env.VITE_READ_URL}`);
+    const data = await response.json();
+    setGames(data);
+    console.log(data);
+  };
+
+  useEffect(() => {
     getGames();
     const gamesInterval = setInterval(getGames, 60000);
     return () => clearInterval(gamesInterval);
@@ -32,7 +33,7 @@ export default function App() {
         <Route path={"/"} element={<Home onGoingGames={onGoingGames} />} />
         <Route
           path={"/gametracker"}
-          element={<GameTracker gameData={games} />}
+          element={<GameTracker gameData={games} getGames={getGames} />}
         />
       </Routes>
     </>
