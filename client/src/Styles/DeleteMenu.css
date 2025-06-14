@@ -43,3 +43,9 @@
   border-top: 2px solid #00f1f1;
   border-bottom: 2px solid #00f1f1;
 }
+
+@media (min-width: 850px) {
+  .deletemenu {
+    left: unset;
+  }
+}
