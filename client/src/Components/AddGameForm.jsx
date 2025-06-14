@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../Styles/Form.css";
 
-export default function AddGameForm() {
+export default function AddGameForm(props) {
   const [formData, setFormData] = useState({
     game_name: "",
     started: "",
@@ -9,13 +9,13 @@ export default function AddGameForm() {
     ongoing: "",
     rating: "",
     thumbnail: "",
-    hours: "",
+    hours: null,
   });
 
-  function handleSubmit(event) {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formData);
-    fetch(`${import.meta.env.VITE_POST_URL}`, {
+    await fetch(`${import.meta.env.VITE_POST_URL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,17 @@ export default function AddGameForm() {
       body: JSON.stringify(formData),
     });
     console.log(formData);
-  }
+    setFormData({
+      game_name: "",
+      started: "",
+      finished: "",
+      ongoing: "",
+      rating: "",
+      thumbnail: "",
+      hours: null,
+    });
+    props.getGames();
+  };
 
   function handleFormData(event) {
     setFormData({ ...formData, [event.target.name]: event.target.value });

@@ -19,7 +19,7 @@ export default function GameTracker(props) {
       <button onClick={() => toggleForm()}>Add Game</button>
       {showForm ? (
         <>
-          <AddGameForm />
+          <AddGameForm getGames={props.getGames} />
         </>
       ) : null}
     </main>
